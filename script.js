@@ -90,3 +90,21 @@ const toggleButton = document.getElementsByClassName('toggle-button')[0]
         carousel.addEventListener("mouseleave", dragStop);
         carousel.addEventListener("touchend", dragStop);
         
+
+
+
+        
+        const glassyButton = document.querySelectorAll(".glassy-button");
+
+        glassyButton.forEach((button) =>{
+            button.addEventListener('mousemove', (e) =>{
+                const centerX = button.offsetWidth / 2;
+                const centerY = button.offsetHeight / 2;
+        
+                const offsetX = e.offsetX - centerX;
+                const offsetY = e.offsetY - centerY;
+        
+                button.style.setProperty("--_x-motion", `${offsetX}px`);
+                button.style.setProperty("--_y-motion", `${offsetY}px`);
+            })
+        })
