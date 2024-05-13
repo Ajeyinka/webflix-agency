@@ -175,6 +175,14 @@ padding-bottom: 6em;
 margin-inline: auto;
 }
 
+@media(max-width:900px){
+  .padding_global{
+    padding-inline:0.5em;
+    padding-bottom: 4em;
+  
+    }
+}
+
 /*NavBar*/
 
 
@@ -540,6 +548,17 @@ to {
    
 }
 
+.glassy-button > *{
+  display: block;
+   background-color: hsl(0 0% 0% / 0);
+   backdrop-filter: blur(0px);
+   transition: background-color var(--_transition-speed),
+   backdrop-filter var(--_transition-speed),
+   translate var(--_transition-speed);
+   padding: var(--_padding);
+   border-radius: inherit;
+}
+
 
 
 .glassy-button::after{
@@ -561,6 +580,14 @@ to {
    backdrop-filter: blur(5px);
 }
 
+.glassy-button:hover > *,
+.glassy-button:focus-visible > *{
+   outline: 1.5px solid hsla(0, 0%, 40%, 0.2);
+   translate: 0 -.5rem;
+   background-color: hsla(235, 100%, 93%, 0.4);
+   backdrop-filter: blur(5px);
+}
+
 .glassy-button:hover::after, 
 .glassy-button:focus-visible::after{
   translate: 0 .2rem;
@@ -570,6 +597,13 @@ to {
 }
 
 .glassy-button:active span{
+  backdrop-filter: blur(8px);
+   translate: 0 -.3rem;
+   background-color: hsla(235, 100%, 93%, 0.1);
+  
+}
+
+.glassy-button:active > *{
   backdrop-filter: blur(8px);
    translate: 0 -.3rem;
    background-color: hsla(235, 100%, 93%, 0.1);
@@ -1991,4 +2025,59 @@ background-blend-mode: screen, overlay, hard-light, color-burn, color-dodge, nor
     
     .bento-icon{
       min-width: 100px;
+    }
+
+
+    @media(max-width:900px){
+
+      .forms{
+  
+      
+      grid-template-columns:  1fr;}
+
+
+      .bentos {
+       
+        grid-template-columns:1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+      
+        
+        }
+    
+        .bento{
+         
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          padding: 10px 20px;
+          
+        }
+    
+        .bento:nth-child(1) { grid-area: unset; }
+    .bento:nth-child(2)  { 
+      grid-area: unset;
+    }
+     
+     .bento:nth-child(3)  { 
+      grid-area: unset;
+      
+     }
+    
+       
+         .servic{
+         
+          grid-template-columns:1fr;
+          
+         }
+    
+         
+    
+       
+        
+        .bento-icon{
+          max-width: 60px;
+        }
+    
+    
+        
     }
