@@ -11,6 +11,9 @@ const toggleButton = document.getElementsByClassName('toggle-button')[0]
             barThree.classList.toggle('active')
         });
 
+        
+      
+
         let accordionHeaders = Array.from(document.querySelectorAll(".accordion-header"));
 
         accordionHeaders.map((header) =>
@@ -37,61 +40,7 @@ const toggleButton = document.getElementsByClassName('toggle-button')[0]
         }
 
         
-        const carousel = document.querySelector('.carousel');
-        firstTestiony = document.querySelectorAll('.testiony')[0];
-        arrowIcons = document.querySelectorAll('.icon');
         
-        let isDragStart = false, prevPageX, preScrollLeft;
-        let firstTestionyWidth = firstTestiony.clientWidth + 16;
-        let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
-        
-        const showHideIcons =()=>{
-            arrowIcons[0].style.display = carousel.scrollLeft == 0 ? 'none' : 'flex';
-            arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? 'none' : 'flex';
-        }
-        
-        arrowIcons.forEach(icon => {
-            icon.addEventListener('click', () =>{
-                carousel.scrollLeft += icon.id == "left" ? -firstTestionyWidth : firstTestionyWidth;
-                setTimeout(() => showHideIcons(), 60);
-            })
-        });
-        
-        const dragStart = (e) =>{
-            isDragStart = true;
-            prevPageX = e.pageX || e.touches[0].pageX;
-            preScrollLeft = carousel.scrollLeft;
-        }
-        
-        
-        
-        const dragging = (e) =>{
-           //console.log(e.pageX);
-           if(!isDragStart) return;
-           e.preventDefault();
-           carousel.classList.add('dragging');
-           let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-           carousel.scrollLeft = preScrollLeft - positionDiff;
-           
-        }
-        
-        const dragStop = () =>{
-            isDragStart = false;
-            carousel.classList.remove('dragging');
-        }
-        
-        carousel.addEventListener("mousedown", dragStart);
-        carousel.addEventListener("touchstart", dragStart);
-        
-        carousel.addEventListener("mousemove", dragging);
-        carousel.addEventListener("touchmove", dragging);
-        
-        carousel.addEventListener("mouseup", dragStop);
-        carousel.addEventListener("mouseleave", dragStop);
-        carousel.addEventListener("touchend", dragStop);
-        
-
-
 
         
         const glassyButton = document.querySelectorAll(".glassy-button");
@@ -108,3 +57,17 @@ const toggleButton = document.getElementsByClassName('toggle-button')[0]
                 button.style.setProperty("--_y-motion", `${offsetY}px`);
             })
         })
+
+
+        const activePage = window.location.pathname;
+        const activeNav = document.querySelectorAll('.ava').
+         forEach(link => {
+             
+              if(link.href.includes(`${activePage}`)){
+              link.classList.add('navactive');
+              const divs = document.createElement("div");
+              divs.id = "divs";
+              document.links.appendChild(divs);
+          
+        }
+      })

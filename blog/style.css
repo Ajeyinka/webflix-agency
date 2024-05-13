@@ -76,3 +76,7 @@ border: 1px solid rgba(255, 255, 255, 0.21);
     font-size: 24px;
     font-family: var(--ff-2);
 }
+
+.tet{
+    max-width: 800px;
+}
