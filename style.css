@@ -1763,6 +1763,7 @@ background-blend-mode: screen, overlay, hard-light, color-burn, color-dodge, nor
 
   .tets{
     text-align: center;
+    margin-top: 20px
    ;
   }
 
