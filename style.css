@@ -564,6 +564,13 @@ to {
   color:#ffffff;
 }
 
+
+@media(max-width:900px){
+  .glassy-button{
+    display: none;
+  }
+}
+
 .glassy-button span{
    display: block;
    background-color: hsl(0 0% 0% / 0);
@@ -2167,3 +2174,17 @@ background-blend-mode: screen, overlay, hard-light, color-burn, color-dodge, nor
       border-radius: 20px;
       box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     }
+
+.hide{
+  display: none;
+}
+    
+@media(max-width:900px){
+  .glassy-button{
+    display: none;
+  }
+
+  .hide{
+    display: inline-block;
+  }
+}
